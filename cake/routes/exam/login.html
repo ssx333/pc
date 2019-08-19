@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <form action="#">
+        用户名:<input type="text" id="uname"><br>
+        密码:<input type="password" id="upwd">
+        <input type="button" value="登录" id="btn">
+    </form>
+    <script>
+        //1:获取按钮并获取点击事件
+        var btn=document.getElementById("btn")
+        btn.onclick=function(){
+        //2:获取用户保存在sessionStorage
+        var uname=document.getElementById("uname");
+        //保存用户名 判断登录的条件
+        sessionStorage.setItem("uname",uname.value);
+        //3:跳转index.html
+        alert("3秒后跳转到首页")
+        setTimeout(function(){
+            location.href="index.html";
+        },3000)
+        }
+        
+    </script>
+</body>
+</html>

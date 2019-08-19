@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!--如果是未登录的，就显示第一个h1-->
+        <h1 v-if="isLogin==false"> <a href="javascript:;"  @click="login">登录</a>|注册</h1>
+        <!--否则就显示第二个h1 -->
+        <h1 v-else>welcome {{uname}},<a href="javascript:;"  @click="logout">注销</a></h1>
+    </div>
+    <script>
+        new Vue({
+            el:"#app",
+            data:{
+                isLogin:false,//开始时是未登录
+                uname:"dingding"
+            },
+            methods:{
+                login(){ this.isLogin=true},
+                logout(){ this.isLogin=false}
+            }
+        })
+    </script>
+</body>
+</html>
